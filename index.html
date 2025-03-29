@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Solutions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            border: none;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .btn-demo {
+            color: purple;
+            border: 1px solid purple;
+        }
+        .btn-demo:hover {
+            background-color: purple;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center my-5">
+        <h6 class="text-uppercase text-muted">Design Innovation</h6>
+        <h2 class="fw-bold">Creative solutions for all industries</h2>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <img src="transportation.jpg" class="card-img-top" alt="Transportation">
+                    <div class="card-body">
+                        <h6 class="text-uppercase text-muted">Industry</h6>
+                        <h4 class="fw-bold">Transportation</h4>
+                        <p>Bring added functionality to product presentation by showing not only how the item looks but how it behaves.</p>
+                        <a href="model.html" target="_blank" class="btn btn-outline-primary btn-demo">View the demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <img src="consumer_goods.jpg" class="card-img-top" alt="Consumer Goods">
+                    <div class="card-body">
+                        <h6 class="text-uppercase text-muted">Industry</h6>
+                        <h4 class="fw-bold">Consumer goods</h4>
+                        <p>Multipurpose design solution for an immersive product showcase for internal use, in-store, and online retail.</p>
+                        <a href="https://app.vectary.com/p/5wCrsXnQYy7r9L3hG2LRFV " target="_blank" class="btn btn-outline-primary btn-demo">View the demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <img src="manufacturing.jpg" class="card-img-top" alt="Manufacturing">
+                    <div class="card-body">
+                        <h6 class="text-uppercase text-muted">Industry</h6>
+                        <h4 class="fw-bold">Manufacturing</h4>
+                        <p>Modernize communication solutions with a 3D and AR transformation while reducing risks and costs.</p>
+                        <button class="btn btn-outline-primary btn-demo" onclick="openFullscreenVideo()">View the demo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openFullscreenVideo() {
+            const videoContainer = document.createElement('div');
+            videoContainer.style.position = 'fixed';
+            videoContainer.style.top = '0';
+            videoContainer.style.left = '0';
+            videoContainer.style.width = '100%';
+            videoContainer.style.height = '100%';
+            videoContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            videoContainer.style.zIndex = '1050';
+            videoContainer.style.display = 'flex';
+            videoContainer.style.justifyContent = 'center';
+            videoContainer.style.alignItems = 'center';
+
+            const video = document.createElement('video');
+            video.controls = true;
+            video.style.width = '80%';
+            video.style.height = '80%';
+            video.src = 'game vdo.mp4';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.backgroundColor = 'red';
+            closeButton.style.color = 'white';
+            closeButton.style.border = 'none';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(videoContainer);
+
+            videoContainer.appendChild(video);
+            videoContainer.appendChild(closeButton);
+            document.body.appendChild(videoContainer);
+        }
+    </script>
+</body>
+</html>
